@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.PmsSpuMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.example.entity.PmsSpu">
+        <id column="id" property="id" />
+        <result column="brand_id" property="brandId" />
+        <result column="cid1" property="cid1" />
+        <result column="cid2" property="cid2" />
+        <result column="name" property="name" />
+        <result column="sub_title" property="subTitle" />
+        <result column="sale" property="sale" />
+        <result column="comment_total_score" property="commentTotalScore" />
+        <result column="comment_amount" property="commentAmount" />
+        <result column="product_specification" property="productSpecification" />
+        <result column="default_price" property="defaultPrice" />
+        <result column="default_pic_url" property="defaultPicUrl" />
+        <result column="publish_status" property="publishStatus" />
+        <result column="verify_status" property="verifyStatus" />
+        <result column="valid" property="valid" />
+        <result column="created_time" property="createdTime" />
+        <result column="updated_time" property="updatedTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, brand_id, cid1, cid2, name, sub_title, sale, comment_total_score, comment_amount, product_specification, default_price, default_pic_url, publish_status, verify_status, valid, created_time, updated_time
+    </sql>
+
+</mapper>

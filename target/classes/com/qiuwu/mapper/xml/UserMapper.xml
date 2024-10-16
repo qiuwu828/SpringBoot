@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qiuwu.mapper.UserMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.qiuwu.entity.User">
+        <id column="userId" property="userId"/>
+        <result column="uname" property="uname"/>
+        <result column="upwd" property="upwd"/>
+        <result column="nick" property="nick"/>
+        <result column="head" property="head"/>
+        <result column="mood" property="mood"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        userId, uname, upwd, nick, head, mood
+    </sql>
+
+    <!--通过用户名和密码登录-->
+    <select id="getUserByNameAndPwd" resultType="com.qiuwu.entity.User">
+        SELECT * FROM tb_user WHERE uname=#{uname} AND upwd=#{upwd};
+    </select>
+
+</mapper>

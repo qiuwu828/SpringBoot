@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qiuwu.mapper.NoteTypeMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.qiuwu.entity.NoteType">
+        <id column="typeId" property="typeId"/>
+        <result column="typeName" property="typeName"/>
+        <result column="userId" property="userId"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        typeId, typeName, userId
+    </sql>
+
+    <!--查看用户日记类型列表-->
+    <select id="getList" resultType="com.qiuwu.entity.NoteType">
+        select * from tb_note_type
+        where userId = #{userId}
+    </select>
+</mapper>

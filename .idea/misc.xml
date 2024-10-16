@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+<<<<<<< HEAD
+=======
+        <option value="$PROJECT_DIR$/pet-controller/pom.xml" />
+        <option value="$PROJECT_DIR$/pet-entity/pom.xml" />
+        <option value="$PROJECT_DIR$/pet-mapper/pom.xml" />
+        <option value="$PROJECT_DIR$/pet-service/pom.xml" />
+>>>>>>> f6f0e47... 宠物商店系统
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

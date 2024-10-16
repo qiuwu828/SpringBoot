@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+<<<<<<< HEAD
+        <module name="yunriji-freemaker" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="yunriji-freemaker" target="1.8" />
+=======
+        <module name="pet-mapper" />
+        <module name="home" />
+        <module name="pet" />
+        <module name="pet-entity" />
+        <module name="pet-service" />
+        <module name="pet-controller" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="home" target="1.8" />
+      <module name="pet" target="1.5" />
+      <module name="pet-controller" target="1.5" />
+      <module name="pet-entity" target="1.5" />
+      <module name="pet-mapper" target="1.5" />
+      <module name="pet-service" target="6" />
+>>>>>>> f6f0e47... 宠物商店系统
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+<<<<<<< HEAD
+      <module name="yunriji-freemaker" options="-parameters" />
+=======
+      <module name="home" options="-parameters" />
+      <module name="pet" options="" />
+      <module name="pet-controller" options="" />
+      <module name="pet-entity" options="" />
+      <module name="pet-mapper" options="" />
+      <module name="pet-service" options="" />
+>>>>>>> f6f0e47... 宠物商店系统
+    </option>
+  </component>
+</project>

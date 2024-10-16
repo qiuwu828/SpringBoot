@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qiuwu.mapper.NoteMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.qiuwu.entity.Note">
+        <id column="noteId" property="noteId"/>
+        <result column="title" property="title"/>
+        <result column="content" property="content"/>
+        <result column="typeId" property="typeId"/>
+        <result column="pubTime" property="pubTime"/>
+        <result column="lon" property="lon"/>
+        <result column="lat" property="lat"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        noteId, title, content, typeId, pubTime, lon, lat
+    </sql>
+
+    <!--获取用户日记列表-->
+    <select id="getNoteDtoList" resultType="com.qiuwu.dto.NoteDto">
+        SELECT t1.*, t2.`typeName` FROM tb_note t1
+        LEFT JOIN tb_note_type t2
+          ON t1.`typeId`=t2.`typeId`
+        WHERE t2.`userId`=#{userId}
+    </select>
+
+    <!--通过月份获取日记数量-->
+    <select id="queryNoteCountByMonth" resultType="com.qiuwu.dto.ReportDto">
+        SELECT DATE_FORMAT(t1.pubTime, '%Y年%m月') groupName , COUNT(1) noteCount
+        FROM tb_note t1
+        INNER JOIN tb_note_type t2
+          ON t1.`typeId`=t2.`typeId`
+        WHERE t2.`userId`=#{userId}
+        GROUP BY groupName
+        ORDER BY groupName ASC
+    </select>
+
+    <!--通过类型查询对应的云日记数量-->
+    <select id="findNoteListByType" resultType="com.qiuwu.dto.ReportDto">
+        SELECT COUNT(1) noteCount, t2.`typeName`
+        FROM tb_note t1
+        INNER JOIN tb_note_type t2
+          ON t1.`typeId`=t2.`typeId`
+        WHERE t2.`userId`= #{userId}
+        GROUP BY t2.`typeName`
+        ORDER BY noteCount DESC
+    </select>
+</mapper>

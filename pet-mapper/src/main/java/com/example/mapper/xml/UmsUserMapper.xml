@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.UmsUserMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.example.entity.UmsUser">
+        <id column="id" property="id"/>
+        <result column="account" property="account"/>
+        <result column="openId" property="openId"/>
+        <result column="user_name" property="userName"/>
+        <result column="head_url" property="headUrl"/>
+        <result column="sex" property="sex"/>
+        <result column="password" property="password"/>
+        <result column="created_time" property="createdTime"/>
+        <result column="updated_time" property="updatedTime"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, account, openId, user_name, head_url, sex, password, created_time, updated_time
+    </sql>
+    <select id="login" resultType="com.example.entity.UmsUser">
+        select * FROM ums_user WHERE account=#{username} AND password=#{password}
+    </select>
+</mapper>
